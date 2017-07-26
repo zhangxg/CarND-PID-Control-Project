@@ -3,6 +3,9 @@
 #include "json.hpp"
 #include "PID.h"
 #include <math.h>
+// add for testing
+#include <random>
+using namespace std;
 
 // for convenience
 using json = nlohmann::json;
@@ -57,7 +60,12 @@ int main()
           * NOTE: Feel free to play around with the throttle and speed. Maybe use
           * another PID controller to control the speed!
           */
-          
+          random_device rd;
+          default_random_engine gen(rd());
+          // Creates a normal (Gaussian) distribution for x, y and theta (yaw).
+          normal_distribution<double> dist_x(0, 1);
+          steer_value = dist_x(gen);
+
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
 
