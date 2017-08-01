@@ -34,7 +34,7 @@ void PID::UpdateError(double cte) {
     diff_cte = cte - prev_cte;
     prev_cte = cte;
     int_cte += cte;
-    cte = cte;
+    this->cte = cte;
     cout << cte << "," << prev_cte << "," << int_cte << endl;
 }
 
