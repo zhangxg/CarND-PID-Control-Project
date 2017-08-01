@@ -21,19 +21,24 @@ void PID::Init(double Kp, double Ki, double Kd) {
     d_error = 1;
 
     int_cte = 0;
+
+    step = 0;
 }
 
 void PID::UpdateError(double cte) {
-    int_cte += cte;
+    if (step == 0) {
+        step = 1;
+        prev_cte = cte;
+        return;
+    }
+    diff_cte = cte - prev_cte;
     prev_cte = cte;
+    int_cte += cte;
     cte = cte;
+    cout << cte << "," << prev_cte << "," << int_cte << endl;
 }
 
 double PID::TotalError() {
-    double diff_cte = cte - prev_cte;
-    int_cte += cte;
-    prev_cte = cte;
-    cout << Kp << "," << Kd << "," << Ki << endl;
     return -Kp * cte - Kd * diff_cte - Ki * int_cte;
 }
 

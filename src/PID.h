@@ -11,8 +11,11 @@ public:
   double d_error;
 
   double cte;
+  double diff_cte;
   double prev_cte;
   double int_cte;
+
+  int step;
 
   /*
   * Coefficients
