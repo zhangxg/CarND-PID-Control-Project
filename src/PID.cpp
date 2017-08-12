@@ -16,9 +16,9 @@ void PID::Init(double Kp, double Ki, double Kd) {
     this->Ki = Ki;
     this->Kd = Kd;
 
-    p_error = 1;
-    i_error = 1;
-    d_error = 1;
+    // p_error = 1;
+    // i_error = 1;
+    // d_error = 1;
 
     int_cte = 0;
 
@@ -35,7 +35,7 @@ void PID::UpdateError(double cte) {
     prev_cte = cte;
     int_cte += cte;
     this->cte = cte;
-    cout << cte << "," << prev_cte << "," << int_cte << endl;
+    // cout << cte << "," << prev_cte << "," << int_cte << endl;
 }
 
 double PID::TotalError() {
