@@ -4,9 +4,9 @@ here I will describe the rubric points:
 
 From the lecture, I know that the P(proportational), I(integral) and D(differential) components have different contributation to the PID controller output. 
 
-The P components is straitforward to use, but it may cause the car to overshoot, I experimentted this using the simulator and got a result as show in video "videos/only_p", as can been seen, the car oscillates a lot and can not drive the full loop. 
+The P components is straitforward to use, but it may cause the car to overshoot, I experimentted this using the simulator and got a result as show in video "videos/PID_only_P.mov", as can been seen, the car oscillates a lot and can not drive the full loop. 
 
-To overcome this, the D component is introduced, which can compensate the overshooting effect. for the simulator, by only adding this, the car can drive the full loop.
+To overcome this, the D component is introduced, which can compensate the overshooting effect. for the simulator, by only adding this, the car can drive the full loop, see video: "videos/PID_full_loop.mov"
 
 the parameter is introduced in below section. 
 
